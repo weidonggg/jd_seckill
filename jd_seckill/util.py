@@ -1,15 +1,19 @@
+#!/usr/bin/env python
+# -*- encoding=utf8 -*-
+
 import json
 import random
 import requests
 import os
 import time
 import smtplib
+
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.image import MIMEImage
 
-from config import global_config
-from jd_logger import logger
+from .config import global_config
+from .jd_logger import logger
 
 USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36",
@@ -127,12 +131,12 @@ def add_bg_for_qr(qr_path):
         qr = Image.open(qr_path)
         w = qr.width
         h = qr.width
-        bg = Image.new("RGB", (w * 2, h * 2), (255, 255, 255))
+        bg = Image.new("RGBA", (w * 2, h * 2), (255, 255, 255))
         result = Image.new(bg.mode, (w * 2, h * 2))
         result.paste(bg, box=(0, 0))
         result.paste(qr, box=(int(w / 2), int(h / 2)))
-        result.save("qr_code.png")
-        return os.path.abspath("qr_code.png")
+        result.save(qr_path)
+        return os.path.abspath(qr_path)
     except ImportError:
         logger.info("加载PIL失败，不对登录二维码进行优化，请查看requirements.txt")
         return qr_path
