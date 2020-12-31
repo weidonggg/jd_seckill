@@ -132,8 +132,6 @@ $ zbarimg qr_code.png > qrcode.txt && qrencode -r qrcode.txt -o - -t UTF8 # ่งฃๆ
 
 ```bash
 $ cd dockerfile
-<<<<<<< HEAD
-$ sudo docker build jd-seckill:latest .
 $ sudo docker build -t jd-seckill:latest .
 ```
 
