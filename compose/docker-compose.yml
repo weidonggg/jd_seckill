@@ -1,0 +1,8 @@
+version: "2.2"
+services:
+  jd-seckill:
+    container_name: jd-seckill
+    restart: always
+    image: jd-seckill:latest
+    volumes:
+      - ./common/configs/config.ini:/app/config.ini
