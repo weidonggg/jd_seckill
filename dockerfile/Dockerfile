@@ -6,7 +6,7 @@ ENV GIT_BRANCH master
 ENV TIMEZONE Asia/Shanghai
 
 COPY docker-python-entrypoint /usr/local/bin/
-COPY jd-seckill /usr/local/bin/
+COPY qrcode /usr/local/bin/
 
 RUN set -ex; \
     ln -snf /usr/share/zoneinfo/$TIMEZONE /etc/localtime \
@@ -40,7 +40,7 @@ RUN set -ex; \
       pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/; \
       \
       chmod +x /usr/local/bin/docker-python-entrypoint; \
-      chmod +x /usr/local/bin/jd-seckill; \
+      chmod +x /usr/local/bin/qrcode; \
       \
       # clean apt cache.
       apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
