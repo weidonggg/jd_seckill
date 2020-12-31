@@ -161,18 +161,8 @@ $ sudo docker logs jd-seckill -f
 
 执行命令输出二维码扫码登录
 ```bash
-$ sudo docker exec jd-seckill jd-seckill qrcode
+$ sudo docker exec jd-seckill qrcode
 ```
-
-5. 更多操作
-
-```bash
-# 秒杀预约
-$ sudo docker exec jd-seckill jd-seckill reserve
-# 执行秒杀 (使用 Docker compose 运行时不需要再执行该命令)
-$ sudo docker exec jd-seckill jd-seckill seckill
-```
-
 ## 打赏
 不用再打赏了，抢到茅台的同学请保持这份喜悦，没抢到的继续加油 :)  
 
