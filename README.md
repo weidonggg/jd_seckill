@@ -164,12 +164,12 @@ $ sudo docker logs jd-seckill -f
 $ sudo docker exec jd-seckill jd-seckill qrcode
 ```
 
-5. 更多
+5. 更多操作
 
 ```bash
 # 秒杀预约
 $ sudo docker exec jd-seckill jd-seckill reserve
-# 执行秒杀
+# 执行秒杀 (使用 Docker compose 运行时不需要再执行该命令)
 $ sudo docker exec jd-seckill jd-seckill seckill
 ```
 
